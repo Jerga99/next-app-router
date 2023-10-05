@@ -11,16 +11,22 @@ const items2 = [
 
 export default function Home() {
 
+  const displayItems = () => 
+    items2.map(item => 
+      <div key={item.value}>{item.value} - {item.prop}</div>
+    );
+  
+
   return (
     <>
       <div>Hello World</div>
       <div> 
-        { items2.map((item) => {
-          console.log(item);
-          return (
-            <div key={item.value}>{item.value} - {item.prop}</div>
-          )
-        })}
+        { displayItems() }
+
+        <hr></hr>
+        { items2.map(obj =>
+          <div key={obj.value}>{obj.value} - {obj.prop}</div>
+        )}
       </div>
     </>
   )
