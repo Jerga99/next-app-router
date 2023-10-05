@@ -1,0 +1,16 @@
+[{
+  "id": "1",
+  "slug": "work-in-siemens",
+  "title": "Work in Siemens",
+  "description": "It was a good work",
+  "coverImage":
+    "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50"
+},
+{
+  "id": "2",
+  "slug": "startup-in-berlin",
+  "title": "Startup in Berlin",
+  "description": "It was a good work as well",
+  "coverImage":
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50"
+}]
