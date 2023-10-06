@@ -1,5 +1,30 @@
 
 
-body {
+.page-container {
   padding: 200px;
+}
+
+.content-section-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content-list {
+  padding: 10px;
+  display: flex;
+}
+
+.content-item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  margin: 5px;
+  padding: 5px;
+}
+
+.content-item__image-container {
+  position: relative;
+  height: 200px;
 }

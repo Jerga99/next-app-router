@@ -10,8 +10,9 @@ export default function RootLayout({ children }) {
  return (
     <html lang="en">
       <body>
-        <div>I am your page wrapper</div>
-        {children}
+        <div className="page-container">
+          {children}
+        </div>
       </body>
     </html>
   )

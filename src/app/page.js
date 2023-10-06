@@ -8,38 +8,39 @@ export default function Home() {
 
   return (
     <>
-      <div>Hello World</div>
-      <div> 
-        <div>Blogs</div>
-        <div>
-          { blogs.map(blog =>
-            <div key={blog.id}>
+      <div className="content-section-title">Blogs</div>
+      <div className="content-list">
+        { blogs.map(blog =>
+          <div className="content-item" key={blog.id}>
+            <div className="content-item__image-container">
               <Image 
                 src={blog.coverImage} 
-                width={100} 
-                height={100} 
+                objectFit="cover"
+                fill={true}
                 alt={blog.title} 
               />
-              <div>{blog.title}</div>
-              <div>{blog.description}</div>
             </div>
-          )}
-        </div>
-        <div>Portfolios</div>
-        <div>
-          { portfolios.map(portfolio =>
-            <div key={portfolio.id}>
+            <div>{blog.title}</div>
+            <div>{blog.description}</div>
+          </div>
+        )}
+      </div>
+      <div className="content-section-title">Portfolios</div>
+      <div className="content-list">
+        { portfolios.map(portfolio =>
+          <div className="content-item" key={portfolio.id}>
+            <div className="content-item__image-container">
               <Image 
                 src={portfolio.coverImage} 
-                width={100} 
-                height={100} 
+                fill={true} 
+                objectFit="cover"
                 alt={portfolio.title} 
               />
-              <div>{portfolio.title}</div>
-              <div>{portfolio.description}</div>
             </div>
-          )}
-        </div>
+            <div>{portfolio.title}</div>
+            <div>{portfolio.description}</div>
+          </div>
+        )}
       </div>
     </>
   )
