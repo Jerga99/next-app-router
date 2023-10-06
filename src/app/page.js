@@ -15,13 +15,16 @@ export default function Home() {
             <div className="content-item__image-container">
               <Image 
                 src={blog.coverImage} 
-                objectFit="cover"
+                style={{objectFit: "cover"}}
                 fill={true}
+                sizes="(max-width: 768px)"
                 alt={blog.title} 
               />
             </div>
-            <div>{blog.title}</div>
-            <div>{blog.description}</div>
+            <div className="content-item__header">
+              <div>{blog.title}</div>
+              <div>{blog.description}</div>
+            </div>
           </div>
         )}
       </div>
@@ -33,12 +36,15 @@ export default function Home() {
               <Image 
                 src={portfolio.coverImage} 
                 fill={true} 
-                objectFit="cover"
+                style={{objectFit: "cover"}}
+                sizes="(max-width: 768px)"
                 alt={portfolio.title} 
               />
             </div>
-            <div>{portfolio.title}</div>
-            <div>{portfolio.description}</div>
+            <div className="content-item__header">
+              <div>{portfolio.title}</div>
+              <div>{portfolio.description}</div>
+            </div>
           </div>
         )}
       </div>

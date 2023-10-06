@@ -28,3 +28,13 @@
   position: relative;
   height: 200px;
 }
+
+.content-item__header {
+  padding: 10px;
+  font-size: 17px;
+}
+
+.content-item__header > div:nth-child(1) {
+  font-weight: bold;
+  font-size: 20px;
+}
