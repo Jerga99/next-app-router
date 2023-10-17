@@ -4,7 +4,7 @@ export function BlogList({blogs}) {
   
   return (
     <>
-      <div className="content-section-title">Blogs</div>
+      <div className="content-section-title">Blogs - UPDATED!!!!!</div>
       <div className="content-list">
         { blogs.map(blog =>
           <div className="content-item" key={blog.id}>
