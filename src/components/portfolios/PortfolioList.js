@@ -1,6 +1,9 @@
+import { getPortfolios } from "@/utils/fetch";
 import Image from "next/image";
 
-export function PortfolioList({portfolios}) {
+export async function PortfolioList() {
+  const {data: portfolios} = await getPortfolios();
+
   return (
     <>
       <div className="content-section-title">Portfolios</div>

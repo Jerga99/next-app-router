@@ -1,7 +1,9 @@
+import { getBlogs } from "@/utils/fetch";
 import Image from "next/image";
 
-export function BlogList({blogs}) {
-  
+export async function BlogList() {
+  const {data: blogs} = await getBlogs();
+
   return (
     <>
       <div className="content-section-title">Blogs - UPDATED!!!!!</div>
