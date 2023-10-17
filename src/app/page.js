@@ -3,9 +3,7 @@ import { BlogList } from "@/components/blogs/BlogList";
 import { PortfolioList } from "@/components/portfolios/PortfolioList";
 
 async function getBlogs() {
-  console.log("Fetching Blogs");
-  const res = await fetch("http://localhost:3000/api/blogs", {cache: "no-cache"});
-  console.log("Getting Blogs");
+  const res = await fetch("http://localhost:3001/api/blogs", {cache: "no-cache"});
   if (!res.ok) {
     throw new Error("Failed to fetch data!");
   }
@@ -14,9 +12,7 @@ async function getBlogs() {
 }
 
 async function getPortfolios() {
-  console.log("Fetching Portfolios");
-  const res = await fetch("http://localhost:3000/api/portfolios", {cache: "no-cache"});
-  console.log("Getting Portfolios");
+  const res = await fetch("http://localhost:3001/api/portfolios", {cache: "no-cache"});
 
   if (!res.ok) {
     throw new Error("Failed to fetch data!");
