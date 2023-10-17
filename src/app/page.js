@@ -4,22 +4,18 @@ import { PortfolioList } from "@/components/portfolios/PortfolioList";
 import { delay } from "@/utils";
 
 async function getBlogs() {
-  console.log("Fetching Blogs");
-  const random = Math.random();
-  await delay(500);
+  await delay(1000);
   const res = await fetch("http://localhost:3001/api/blogs", {cache: "no-cache"});
   if (!res.ok) {
     throw new Error("Failed to fetch data!");
   }
 
-  const blogs = await res.json();
-
-  return {blogs, random};
+  return res.json();
 }
 
 async function getPortfolios() {
   console.log("Fetching Portfolios");
-  await delay(1000);
+  await delay(2000);
   const res = await fetch("http://localhost:3001/api/portfolios", {cache: "no-cache"});
 
   if (!res.ok) {
@@ -30,14 +26,20 @@ async function getPortfolios() {
 }
 
 export default async function Home() {
-  const {blogs, random} = await getBlogs();
-  const {data: portfolios} = await getPortfolios();
+  // --- sequentional fetching ---
+  // const {data: blogs} = await getBlogs();
+  // const {data: portfolios} = await getPortfolios();
+
+  // --- parallel fetching ---
+  const blogsPromise = getBlogs();
+  const portfolioPromise = getPortfolios();
+
+  const [blogs, portfolios] = await Promise.all([blogsPromise, portfolioPromise]);
 
   return (
     <>
-      <h1>{random}</h1>
       <BlogList blogs={blogs.data} />
-      <PortfolioList portfolios={portfolios} />
+      <PortfolioList portfolios={portfolios.data} />
     </>
   )
 }
