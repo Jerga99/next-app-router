@@ -21,6 +21,8 @@ export function getBlogs() {
     const fileContent = fs.readFileSync(filePath, "utf8");
 
     const { data, content} = matter(fileContent);
+    data.slug = name.replace(/\.md$/, "");
+
     return {...data, content};
   });
 
@@ -35,6 +37,7 @@ export function getPortfolios() {
     const fileContent = fs.readFileSync(filePath, "utf8");
     
     const { data, content} = matter(fileContent);
+    data.slug = name.replace(/\.md$/, "");
     return {...data, content}
   })
 
