@@ -1,16 +1,16 @@
-[{
-  "id": "1",
-  "slug": "some-blog-1",
-  "title": "Entirely new blog!!!",
-  "description": "Such an interesting blog!",
-  "coverImage":
-    "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50"
-},
-{
-  "id": "2",
-  "slug": "some-blog-2",
-  "title": "Some blog 2 - Server",
-  "description": "Such an interesting blog as well!",
-  "coverImage":
-    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50"
-}]
+[
+  {
+    "id": 9,
+    "slug": "Some-Blog-9",
+    "title": "Some Blog 9",
+    "description": "Such an interesting blog!",
+    "coverImage": "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50"
+  },
+  {
+    "id": 7,
+    "slug": "Some-Blog-7",
+    "title": "Some Blog 7",
+    "description": "Such an interesting blog as well!",
+    "coverImage": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50"
+  }
+]
