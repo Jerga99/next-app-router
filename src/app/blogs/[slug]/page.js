@@ -1,6 +1,12 @@
-import { getBlogBySlug } from "@/utils";
+import { getBlogBySlug, getBlogs } from "@/utils";
 
+export function generateStaticParams() {
+  const blogs = getBlogs();
 
+  return blogs.map(blog =>({
+    slug: blog.slug
+  }));
+}
 
 export default function BlogDetail({params}) {
 
