@@ -1,8 +1,25 @@
-import { getBlogs } from "@/utils/fetch";
+"use client"
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export async function BlogList() {
-  const {data: blogs} = await getBlogs();
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    async function get() {
+      const res = await fetch("http://localhost:3001/api/blogs");
+      const json = await res.json();
+      setBlogs(json.data);
+    }
+
+    get();
+  }, []);
+
+  if (blogs.length === 0) {
+    return <div>Loading Blogs...</div>
+  }
+
 
   return (
     <>
