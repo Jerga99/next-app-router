@@ -3,8 +3,6 @@ import { BlogList } from "@/components/blogs/BlogList";
 import { PortfolioList } from "@/components/portfolios/PortfolioList";
 import { Suspense } from "react";
 
-export const revalidate = 2;
-
 export default async function Home() {
   return (
     <>
