@@ -43,3 +43,23 @@ export function getPortfolios() {
 
   return portfolios;
 }
+
+export function getBlogBySlug(slug) {
+  const fileName = slug + ".md";
+  const filePath = path.join(blogsDir, fileName);
+  const fileContent = fs.readFileSync(filePath, "utf8");
+
+  const { data, content} = matter(fileContent);
+  data.slug = slug;
+  return {...data, content};
+}
+
+export function getPortfolioBySlug(slug) {
+  const fileName = slug + ".md";
+  const filePath = path.join(portfoliosDir, fileName);
+  const fileContent = fs.readFileSync(filePath, "utf8");
+
+  const { data, content} = matter(fileContent);
+  data.slug = slug;
+  return {...data, content};
+}

@@ -1,11 +1,18 @@
+import { getBlogBySlug } from "@/utils";
 
 
 
 export default function BlogDetail({params}) {
 
+  const blog = getBlogBySlug(params.slug);
+
   return (
     <>
-      Blog Detail of: {params.slug}
+      <div>Blog Data: {blog.title}, {blog.description}</div>
+
+      <hr />
+
+      <div>{blog.content}</div>
     </>
   )
 }
