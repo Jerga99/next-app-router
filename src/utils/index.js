@@ -14,10 +14,24 @@ export async function delay(ms) {
 
 export function getBlogs() {
   const blogNames = fs.readdirSync(blogsDir);
-  return blogNames;
+
+  const blogs = blogNames.map(name => {
+    const filePath = path.join(blogsDir, name);
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    return fileContent;
+  })
+
+  return blogs;
 }
 
 export function getPortfolios() {
   const portfolioNames = fs.readdirSync(portfoliosDir);
-  return portfolioNames;
+  
+  const portfolios = portfolioNames.map(name => {
+    const filePath = path.join(portfoliosDir, name);
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    return fileContent;
+  })
+
+  return portfolios;
 }
