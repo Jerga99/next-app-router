@@ -7,8 +7,11 @@ export function BlogList() {
   return (
     <>
       <div className="content-section-title">Blogs - UPDATED!!!!!</div>
+      { blogs.map(blog =>
+        <div key={blog}>{blog}</div>  
+      )}
       <div className="content-list">
-        { blogs.map(blog =>
+        {/* { blogs.map(blog =>
           <div className="content-item" key={blog.id}>
             <div className="content-item__image-container">
               <Image 
@@ -24,7 +27,7 @@ export function BlogList() {
               <div>{blog.description}</div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </>
   )
