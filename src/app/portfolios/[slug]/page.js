@@ -8,8 +8,8 @@ export function generateStaticParams() {
   }));
 }
 
-export default function PortfolioDetail({params}) {
-  const portfolio = getPortfolioBySlug(params.slug);
+export default async function PortfolioDetail({params}) {
+  const portfolio = await getPortfolioBySlug(params.slug);
 
   return (
     <>
@@ -17,7 +17,7 @@ export default function PortfolioDetail({params}) {
 
       <hr />
 
-      <div>{portfolio.content}</div>
+      <div dangerouslySetInnerHTML={{__html: portfolio.content}}></div>
     </>
   )
 }

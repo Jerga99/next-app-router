@@ -8,9 +8,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function BlogDetail({params}) {
+export default async function BlogDetail({params}) {
 
-  const blog = getBlogBySlug(params.slug);
+  const blog = await getBlogBySlug(params.slug);
 
   return (
     <>
@@ -18,7 +18,7 @@ export default function BlogDetail({params}) {
 
       <hr />
 
-      <div>{blog.content}</div>
+      <div dangerouslySetInnerHTML={{__html: blog.content}}></div>
     </>
   )
 }

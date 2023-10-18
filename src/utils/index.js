@@ -3,6 +3,9 @@
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
+import { remark } from "remark";
+import remarkGfm from "remark-gfm";
+import remarkHtml from "remark-html";
 
 const blogsDir = path.join(process.cwd(), "src", "content", "blogs");
 const portfoliosDir = path.join(process.cwd(), "src", "content", "portfolios");
@@ -44,22 +47,34 @@ export function getPortfolios() {
   return portfolios;
 }
 
-export function getBlogBySlug(slug) {
+async function markdownToHtml(content) {
+  const result = await remark()
+    .use(remarkHtml)
+    .use(remarkGfm)
+    .process(content);
+
+  return result.toString();
+}
+
+export async function getBlogBySlug(slug) {
   const fileName = slug + ".md";
   const filePath = path.join(blogsDir, fileName);
   const fileContent = fs.readFileSync(filePath, "utf8");
 
   const { data, content} = matter(fileContent);
   data.slug = slug;
-  return {...data, content};
+
+  const htmlContent = await markdownToHtml(content);
+  return {...data, content: htmlContent};
 }
 
-export function getPortfolioBySlug(slug) {
+export async function getPortfolioBySlug(slug) {
   const fileName = slug + ".md";
   const filePath = path.join(portfoliosDir, fileName);
   const fileContent = fs.readFileSync(filePath, "utf8");
 
   const { data, content} = matter(fileContent);
   data.slug = slug;
-  return {...data, content};
+  const htmlContent = await markdownToHtml(content);
+  return {...data, content: htmlContent};
 }
