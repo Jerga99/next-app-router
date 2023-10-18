@@ -1,8 +1,9 @@
-import { getPortfolios } from "@/utils/fetch";
+
+import { getPortfolios } from "@/utils";
 import Image from "next/image";
 
 export async function PortfolioList() {
-  const {data: portfolios} = await getPortfolios();
+  const portfolios = getPortfolios();
 
   return (
     <>

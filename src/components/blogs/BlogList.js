@@ -1,25 +1,8 @@
-"use client"
-
+import { getBlogs } from "@/utils";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export function BlogList() {
-  const [blogs, setBlogs] = useState([]);
-
-  useEffect(() => {
-    async function get() {
-      const res = await fetch("/api/blogs");
-      const json = await res.json();
-      setBlogs(json.data);
-    }
-
-    get();
-  }, []);
-
-  if (blogs.length === 0) {
-    return <div>Loading Blogs...</div>
-  }
-
+  const blogs = getBlogs();
 
   return (
     <>
