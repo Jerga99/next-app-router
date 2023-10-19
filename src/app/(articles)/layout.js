@@ -2,7 +2,7 @@
 
 export default function Layout({children}){
   return (
-    <div className="portfolio-page-wrapper">
+    <div className="article-page-wrapper">
       {children}
     </div>
   )
