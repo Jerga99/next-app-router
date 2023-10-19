@@ -6,12 +6,6 @@ export function PortfolioList() {
   const portfolios = getPortfolios();
   return (
     <>
-      <div className="mb-4">
-        <h2 className="text-3xl mb-0">Portfolios</h2>
-        <Link href={"/portfolios"} className="underline button is-text">
-          See All
-        </Link>
-      </div>
       <div className="mb-14">
         <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
           {portfolios.map((portfolio) => (
@@ -32,7 +26,7 @@ export function PortfolioList() {
               </div>
               <div className="flex-1 p-4 space-y-2 flex flex-col">
                 <h3 className="text-sm font-medium text-gray-900">
-                  <Link href={`/courses/${portfolio.slug}`}>
+                  <Link href={`/portfolios/${portfolio.slug}`}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     {portfolio.title}
                   </Link>

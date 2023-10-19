@@ -8,12 +8,6 @@ export async function BlogList() {
 
   return (
     <>
-      <div className="mb-4">
-        <h2 className="text-3xl mb-0">Blogs</h2>
-        <Link href={"/blogs"} className="underline button is-text">
-          See All
-        </Link>
-      </div>
       <div className="mb-14">
         <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
           {blogs.map((blog) => (
@@ -34,7 +28,7 @@ export async function BlogList() {
               </div>
               <div className="flex-1 p-4 space-y-2 flex flex-col">
                 <h3 className="text-sm font-medium text-gray-900">
-                  <Link href={`/courses/${blog.slug}`}>
+                  <Link href={`/blogs/${blog.slug}`}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     {blog.title}
                   </Link>
