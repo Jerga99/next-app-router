@@ -1,4 +1,5 @@
 
+import { Navigation } from "@/components/Navigation";
 import "./globals.css";
 
 export const metadata = {
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className="page-container">
+          <Navigation />
           {children}
         </div>
       </body>
