@@ -44,13 +44,15 @@ export const ContentHeader = ({
       </div>
       <h1 className="font-bold text-4xl mb-1">{title}</h1>
       <h2 className="blog-detail-header-subtitle mb-2 text-xl text-gray-600">{description}</h2>
-      <div className="h-96 bg-black mx-auto w-full relative">
-        <Image
-          priority
-          layout="fill"
-          objectFit="cover"
-          src={coverImage} alt=""/>
-      </div>
+      { coverImage &&
+        <div className="h-96 bg-black mx-auto w-full relative">
+          <Image
+            priority
+            layout="fill"
+            objectFit="cover"
+            src={coverImage} alt=""/>
+        </div>
+      }
     </div>
   )
 }

@@ -1,4 +1,6 @@
-export function Hero() {
+import Link from "next/link";
+
+export function Hero({count}) {
   return (
     <div className="relative bg-gray-50">
       <main className="lg:relative">
@@ -18,10 +20,10 @@ export function Hero() {
               <dl className="-mx-8 -mt-8 flex flex-wrap justify-center lg:justify-start">
                 <div className="flex flex-col px-8 pt-8">
                   <dt className="order-2 text-base font-medium text-gray-500">
-                    Projects
+                    Portfolios
                   </dt>
                   <dd className="order-1 text-2xl font-extrabold text-indigo-600 sm:text-3xl">
-                    5
+                    {count.portfolios}
                   </dd>
                 </div>
                 <div className="flex flex-col px-8 pt-8">
@@ -29,19 +31,19 @@ export function Hero() {
                     Blogs
                   </dt>
                   <dd className="order-1 text-2xl font-extrabold text-indigo-600 sm:text-3xl">
-                    10
+                    {count.blogs}
                   </dd>
                 </div>
               </dl>
             </div>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
-                <a
-                  href="#courses"
+                <Link
+                  href="/portfolios"
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                 >
                   Check Portoflios
-                </a>
+                </Link>
               </div>
               <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
                 {/* Second Button */}
