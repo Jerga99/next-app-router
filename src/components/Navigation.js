@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const links = [{
   href: "/",
@@ -19,6 +19,7 @@ const links = [{
 
 export function Navigation() {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <ul className="navigation-list">
@@ -30,6 +31,20 @@ export function Navigation() {
             </Link>
           </li>
         )}
+
+        <button onClick={() => {
+          router.push("/")
+        }}>
+          Go Home
+        </button>
+
+        <div>
+          <p onClick={() => {
+            router.push("/todos")
+          }}>
+            I am just random paragraph to todos!!!!!
+          </p>
+        </div>
     </ul>
   )
 }
