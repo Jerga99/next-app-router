@@ -9,7 +9,7 @@ export default function Todos() {
       <ul>
         {Array.from({length: TODOS_COUNT}).map((_, i) => 
           <li key={`todo-${i}`}>
-            <Link href={`/todos/${i}`}>Todo - {i}</Link>
+            <Link replace={true} href={`/todos/${i}`}>Todo - {i}</Link>
           </li>
         )}
       </ul>
