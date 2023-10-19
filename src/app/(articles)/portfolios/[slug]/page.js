@@ -12,13 +12,11 @@ export default async function PortfolioDetail({params}) {
   const portfolio = await getPortfolioBySlug(params.slug);
 
   return (
-    <>
-      <div>Portfolio Data: {portfolio.title}, {portfolio.description}</div>
-
-      <hr />
-
-      <div dangerouslySetInnerHTML={{__html: portfolio.content}}></div>
-    </>
+    <div>
+      <article className="prose lg:prose-lg markdown-image-50">
+        <div dangerouslySetInnerHTML={{__html: portfolio.content}}></div>
+      </article>
+    </div>
   )
 }
 

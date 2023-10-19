@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@tailwindcss/typography": "^0.5.10",
     "gray-matter": "^4.0.3",
     "next": "13.5.4",
     "react": "^18",

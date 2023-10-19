@@ -23,7 +23,9 @@ export default async function BlogDetail({params}) {
         date={blog.date}
         author={blog.author}
       />
-      <div dangerouslySetInnerHTML={{__html: blog.content}}></div>
+      <article className="prose lg:prose-lg markdown-image-50">
+        <div dangerouslySetInnerHTML={{__html: blog.content}}></div>
+      </article>
     </div>
   )
 }
